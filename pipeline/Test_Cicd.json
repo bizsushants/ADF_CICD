@@ -39,10 +39,7 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"notebookPath": "/Shared/CICD_DEV/CurrentDateValue",
-					"baseParameters": {
-						"current_date": "date"
-					}
+					"notebookPath": "/Shared/CICD_DEV/CurrentDateValue"
 				},
 				"linkedServiceName": {
 					"referenceName": "DB_CICD_DEV",
