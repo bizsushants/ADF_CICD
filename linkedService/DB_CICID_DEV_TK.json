@@ -1,0 +1,12 @@
+{
+	"name": "DB_CICID_DEV_TK",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"description": "TEST",
+		"annotations": [],
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://DevProdKeys.vault.azure.net/"
+		}
+	}
+}

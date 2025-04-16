@@ -1,0 +1,9 @@
+{
+	"name": "DEVcicdENV",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "b7ef717f-c007-497c-99cf-ec42d49c35f6",
+		"tenantId": "81ec12a0-4f82-4297-b1f6-90ddd38a68d9"
+	}
+}

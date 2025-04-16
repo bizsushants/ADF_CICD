@@ -1,0 +1,59 @@
+{
+	"name": "Test_Cicd",
+	"properties": {
+		"activities": [
+			{
+				"name": "currentDate",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "currentDate",
+					"value": {
+						"value": "@utcnow()\n",
+						"type": "Expression"
+					}
+				}
+			},
+			{
+				"name": "cicd_dev",
+				"type": "DatabricksNotebook",
+				"dependsOn": [
+					{
+						"activity": "currentDate",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Shared/CICD_DEV/CurrentDateValue"
+				},
+				"linkedServiceName": {
+					"referenceName": "DB_CICD_DEV",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"variables": {
+			"currentDate": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2025-04-16T08:36:09Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
